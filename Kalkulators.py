@@ -15,9 +15,33 @@ def btnCommand(command):
 
 def btnClick(number):
     current=e.get()#nolasa esošo skaitli
-    e.delete(0,END)
+    e.delete(0,END)#nodzēš
     newNumber=str(current)+str(number)
     e.insert(0,newNumber)#ievieto displejā
+    return 0
+
+def vienads():
+    global num2
+    num2=(int(e.get()))
+    result=0
+    if mathOp=="+":
+        result=num1+num2
+    elif mathOp=="-":
+        result=num1-num2
+    elif mathOp=="*":
+        result=num1*num2   
+    elif mathOp=="/":
+        result=num1/num2  
+    else:
+        result=0
+    e.delete(0,END)
+    e.insert(0,str(result))
+    return 0
+
+def notirit():
+    e.delete(0,END)
+    num1=0
+    mathOp=''
     return 0
     
     
@@ -35,12 +59,13 @@ btn6=Button(mansLogs,text="6",padx="40",pady="20",command=lambda:btnClick(6))
 btn7=Button(mansLogs,text="7",padx="40",pady="20",command=lambda:btnClick(7))
 btn8=Button(mansLogs,text="8",padx="40",pady="20",command=lambda:btnClick(8))
 btn9=Button(mansLogs,text="9",padx="40",pady="20",command=lambda:btnClick(9))
-btn11=Button(mansLogs,text="C",padx="40",pady="20")
-btn12=Button(mansLogs,text="=",padx="40",pady="20",command=lambda:btnCommand("="))
+btn11=Button(mansLogs,text="C",padx="40",pady="20",command=notirit)
+btn12=Button(mansLogs,text="=",padx="40",pady="20",command=vienads)
 btn13=Button(mansLogs,text="/",padx="40",pady="20",command=lambda:btnCommand("/"))
 btn14=Button(mansLogs,text="x",padx="40",pady="20",command=lambda:btnCommand("*"))
 btn15=Button(mansLogs,text="+",padx="40",pady="20",command=lambda:btnCommand("+"))
 btn16=Button(mansLogs,text="-",padx="40",pady="20",command=lambda:btnCommand("-"))
+
 
 btn7.grid(row=1,column=0)
 btn8.grid(row=1,column=1)
