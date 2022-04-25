@@ -1,28 +1,36 @@
+from ast import operator
 from cProfile import run
 from distutils.archive_util import make_archive
 from tkinter import*
+from math import *
 mansLogs=Tk()
 mansLogs.title("Kalkulators")
 #mansLogs.geometry("400x300")#Loga izmers starp x nav astsartape
+#=================================================================
+
+#=================================================================
 def btnCommand(command):
     global num1#jāiegaumē skaitlis un darbība
     global mathOp#matemātiskais operators
     mathOp=command #+, -, /, *
-    num1=int(e.get())
+    num1=float(e.get())
     e.delete(0,END)
     return 0
+#=================================================================
 
-
+#=================================================================
 def btnClick(number):
     current=e.get()#nolasa esošo skaitli
     e.delete(0,END)#nodzēš
     newNumber=str(current)+str(number)
     e.insert(0,newNumber)#ievieto displejā
     return 0
+#=================================================================
 
+#=================================================================
 def vienads():
     global num2
-    num2=(int(e.get()))
+    num2=(float(e.get()))
     result=0
     if mathOp=="+":
         result=num1+num2
@@ -37,17 +45,49 @@ def vienads():
     e.delete(0,END)
     e.insert(0,str(result))
     return 0
+#=================================================================
 
+#=================================================================
 def notirit():
     e.delete(0,END)
     num1=0
     mathOp=''
     return 0
-    
-    
+#=================================================================
 
-e=Entry(mansLogs,width=15,font=("Arial Black",20))#veido display kur vadīs skaitļus
-e.grid(row=0,column=0,columnspan=4)
+#=================================================================
+def sq_rt():
+    global operator
+    global num1
+    num1=(float(e.get()))
+    num1=sqrt(num1)
+    e.delete(0,END)
+    e.insert(0,num1)
+    return 0
+#=================================================================
+
+#=================================================================
+def kapina():
+    global operator
+    global num1
+    num1 =(float(e.get()))
+    num1=num1*num1
+#=================================================================
+
+#=================================================================
+def loga():
+    global operator
+    global num1
+    num1=(float(e.get()))
+    num1=log(num1,10)
+    e.delete(0,END)
+    e.insert(0,num1)
+    return 0
+#=================================================================
+    
+#=================================================================
+e=Entry(mansLogs,width=15,bd=20,font=("Arial Black",20))#veido display kur vadīs skaitļus
+e.grid(row=0,column=0,columnspan=5)
 
 btn0=Button(mansLogs,text="0",padx="40",pady="20",command=lambda:btnClick(0))#funkcijais padod parametrus
 btn1=Button(mansLogs,text="1",padx="40",pady="20",command=lambda:btnClick(1))
@@ -65,8 +105,12 @@ btn13=Button(mansLogs,text="/",padx="40",pady="20",command=lambda:btnCommand("/"
 btn14=Button(mansLogs,text="x",padx="40",pady="20",command=lambda:btnCommand("*"))
 btn15=Button(mansLogs,text="+",padx="40",pady="20",command=lambda:btnCommand("+"))
 btn16=Button(mansLogs,text="-",padx="40",pady="20",command=lambda:btnCommand("-"))
+btn17=Button(mansLogs,text="√",padx="40",pady="20",command=sq_rt)
+btn18=Button(mansLogs,text="log",padx="40",pady="20",command=loga)
+btn19=Button(mansLogs,text="x²",padx="40",pady="20",command=kapina)
+#=================================================================
 
-
+#=================================================================
 btn7.grid(row=1,column=0)
 btn8.grid(row=1,column=1)
 btn9.grid(row=1,column=2)
@@ -83,7 +127,9 @@ btn13.grid(row=1,column=3)
 btn14.grid(row=2,column=3)
 btn15.grid(row=3,column=3)
 btn16.grid(row=4,column=3)
-
+btn17.grid(row=1,column=4)
+btn18.grid(row=2,column=4)
+#=================================================================
 
 
 mansLogs.mainloop()
