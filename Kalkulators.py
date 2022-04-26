@@ -40,6 +40,8 @@ def vienads():
         result=num1*num2   
     elif mathOp=="/":
         result=num1/num2  
+    elif mathOp=="%":
+        result=num1*0.01*num2
     else:
         result=0
     e.delete(0,END)
@@ -67,11 +69,14 @@ def sq_rt():
 #=================================================================
 
 #=================================================================
-def kapina():
+def kvadr():
     global operator
     global num1
     num1 =(float(e.get()))
-    num1=num1*num1
+    num1=num1**2
+    e.delete(0,END)
+    e.insert(0,num1)
+    return 0
 #=================================================================
 
 #=================================================================
@@ -79,11 +84,12 @@ def loga():
     global operator
     global num1
     num1=(float(e.get()))
-    num1=log(num1,10)
+    num1=log(num1,81)
     e.delete(0,END)
     e.insert(0,num1)
     return 0
 #=================================================================
+
     
 #=================================================================
 e=Entry(mansLogs,width=15,bd=20,font=("Arial Black",20))#veido display kur vadīs skaitļus
@@ -101,13 +107,14 @@ btn8=Button(mansLogs,text="8",padx="40",pady="20",command=lambda:btnClick(8))
 btn9=Button(mansLogs,text="9",padx="40",pady="20",command=lambda:btnClick(9))
 btn11=Button(mansLogs,text="C",padx="40",pady="20",command=notirit)
 btn12=Button(mansLogs,text="=",padx="40",pady="20",command=vienads)
-btn13=Button(mansLogs,text="/",padx="40",pady="20",command=lambda:btnCommand("/"))
-btn14=Button(mansLogs,text="x",padx="40",pady="20",command=lambda:btnCommand("*"))
-btn15=Button(mansLogs,text="+",padx="40",pady="20",command=lambda:btnCommand("+"))
-btn16=Button(mansLogs,text="-",padx="40",pady="20",command=lambda:btnCommand("-"))
-btn17=Button(mansLogs,text="√",padx="40",pady="20",command=sq_rt)
-btn18=Button(mansLogs,text="log",padx="40",pady="20",command=loga)
-btn19=Button(mansLogs,text="x²",padx="40",pady="20",command=kapina)
+btn13=Button(mansLogs,text="/",padx="50",pady="20",command=lambda:btnCommand("/"))
+btn14=Button(mansLogs,text="x",padx="50",pady="20",command=lambda:btnCommand("*"))
+btn15=Button(mansLogs,text="+",padx="50",pady="20",command=lambda:btnCommand("+"))
+btn16=Button(mansLogs,text="-",padx="50",pady="20",command=lambda:btnCommand("-"))
+btn17=Button(mansLogs,text="√",padx="50",pady="20",command=sq_rt)
+btn18=Button(mansLogs,text="log",padx="50",pady="20",command=loga)
+btn19=Button(mansLogs,text="x²",padx="50",pady="20",command=kvadr)
+btn20=Button(mansLogs,text="%",padx="50",pady="20",command=lambda:btnCommand("%"))
 #=================================================================
 
 #=================================================================
@@ -127,8 +134,10 @@ btn13.grid(row=1,column=3)
 btn14.grid(row=2,column=3)
 btn15.grid(row=3,column=3)
 btn16.grid(row=4,column=3)
-btn17.grid(row=1,column=4)
-btn18.grid(row=2,column=4)
+btn17.grid(row=5,column=1)
+btn18.grid(row=5,column=0)
+btn19.grid(row=5,column=2)
+btn20.grid(row=5,column=3)
 #=================================================================
 
 
