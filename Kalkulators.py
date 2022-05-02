@@ -5,7 +5,10 @@ from tkinter import*
 from math import *
 mansLogs=Tk()
 mansLogs.title("Kalkulators")
-#mansLogs.geometry("400x300")#Loga izmers starp x nav astsartape
+mansLogs.geometry("400x300")#Loga izmers starp x nav astsartape
+
+mansLogs.configure(bg='teal')
+
 #=================================================================
 
 #=================================================================
@@ -92,29 +95,29 @@ def loga():
 
     
 #=================================================================
-e=Entry(mansLogs,width=15,bd=20,font=("Arial Black",20))#veido display kur vadīs skaitļus
+e=Entry(mansLogs,bg="pink",width=15,bd=20,font=("Arial Black",20))#veido display kur vadīs skaitļus
 e.grid(row=0,column=0,columnspan=5)
 
-btn0=Button(mansLogs,text="0",padx="40",pady="20",command=lambda:btnClick(0))#funkcijais padod parametrus
-btn1=Button(mansLogs,text="1",padx="40",pady="20",command=lambda:btnClick(1))
-btn2=Button(mansLogs,text="2",padx="40",pady="20",command=lambda:btnClick(2))
-btn3=Button(mansLogs,text="3",padx="40",pady="20",command=lambda:btnClick(3))
-btn4=Button(mansLogs,text="4",padx="40",pady="20",command=lambda:btnClick(4))
-btn5=Button(mansLogs,text="5",padx="40",pady="20",command=lambda:btnClick(5))
-btn6=Button(mansLogs,text="6",padx="40",pady="20",command=lambda:btnClick(6))
-btn7=Button(mansLogs,text="7",padx="40",pady="20",command=lambda:btnClick(7))
-btn8=Button(mansLogs,text="8",padx="40",pady="20",command=lambda:btnClick(8))
-btn9=Button(mansLogs,text="9",padx="40",pady="20",command=lambda:btnClick(9))
-btn11=Button(mansLogs,text="C",padx="40",pady="20",command=notirit)
-btn12=Button(mansLogs,text="=",padx="40",pady="20",command=vienads)
-btn13=Button(mansLogs,text="/",padx="50",pady="20",command=lambda:btnCommand("/"))
-btn14=Button(mansLogs,text="x",padx="50",pady="20",command=lambda:btnCommand("*"))
-btn15=Button(mansLogs,text="+",padx="50",pady="20",command=lambda:btnCommand("+"))
-btn16=Button(mansLogs,text="-",padx="50",pady="20",command=lambda:btnCommand("-"))
-btn17=Button(mansLogs,text="√",padx="50",pady="20",command=sq_rt)
-btn18=Button(mansLogs,text="log",padx="50",pady="20",command=loga)
-btn19=Button(mansLogs,text="x²",padx="50",pady="20",command=kvadr)
-btn20=Button(mansLogs,text="%",padx="50",pady="20",command=lambda:btnCommand("%"))
+btn0=Button(mansLogs,font="5",bg="yellow",text="0",padx="40",pady="20",command=lambda:btnClick(0))#funkcijais padod parametrus
+btn1=Button(mansLogs,font="5",bg="yellow",text="1",padx="40",pady="20",command=lambda:btnClick(1))
+btn2=Button(mansLogs,font="5",bg="yellow",text="2",padx="40",pady="20",command=lambda:btnClick(2))
+btn3=Button(mansLogs,font="5",bg="yellow",text="3",padx="40",pady="20",command=lambda:btnClick(3))
+btn4=Button(mansLogs,font="5",bg="yellow",text="4",padx="40",pady="20",command=lambda:btnClick(4))
+btn5=Button(mansLogs,font="5",bg="yellow",text="5",padx="40",pady="20",command=lambda:btnClick(5))
+btn6=Button(mansLogs,font="5",bg="yellow",text="6",padx="40",pady="20",command=lambda:btnClick(6))
+btn7=Button(mansLogs,font="5",bg="yellow",text="7",padx="40",pady="20",command=lambda:btnClick(7))
+btn8=Button(mansLogs,font="5",bg="yellow",text="8",padx="40",pady="20",command=lambda:btnClick(8))
+btn9=Button(mansLogs,font="5",bg="yellow",text="9",padx="40",pady="20",command=lambda:btnClick(9))
+btn11=Button(mansLogs,font="5",bg="yellow",text="C",padx="40",pady="20",command=notirit)
+btn12=Button(mansLogs,font="5",bg="yellow",text="=",padx="40",pady="20",command=vienads)
+btn13=Button(mansLogs,font="5",bg="cyan",text="/",padx="50",pady="20",command=lambda:btnCommand("/"))
+btn14=Button(mansLogs,font="5",bg="cyan",text="x",padx="50",pady="20",command=lambda:btnCommand("*"))
+btn15=Button(mansLogs,font="5",bg="cyan",text="+",padx="50",pady="20",command=lambda:btnCommand("+"))
+btn16=Button(mansLogs,font="5",bg="cyan",text="-",padx="50",pady="20",command=lambda:btnCommand("-"))
+btn17=Button(mansLogs,font="5",bg="cyan",text="√",padx="50",pady="20",command=sq_rt)
+btn18=Button(mansLogs,font="5",bg="cyan",text="log",padx="50",pady="20",command=loga)
+btn19=Button(mansLogs,font="5",bg="cyan",text="x²",padx="50",pady="20",command=kvadr)
+btn20=Button(mansLogs,font="5",bg="cyan",text="%",padx="50",pady="20",command=lambda:btnCommand("%"))
 #=================================================================
 
 #=================================================================
